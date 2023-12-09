@@ -1,114 +1,305 @@
-import Image from 'next/image'
-import Navbar from './component/Navbar'
-export default function Home() {
+'use client';
+import { useEffect, useState } from "react";
+import { SafeAuthPack, SafeAuthInitOptions, AuthKitSignInData } from "@safe-global/auth-kit";
+import Safe, { EthersAdapter, SafeFactory } from "@safe-global/protocol-kit";
+import { ethers, BrowserProvider, Eip1193Provider } from "ethers";
+import { GelatoRelayPack } from '@safe-global/relay-kit'
+// import "./app.css";
+import RPC from "./web3RPC"; 
+import { MetaTransactionData, MetaTransactionOptions } from '@safe-global/safe-core-sdk-types'
+function App() {
+  const [safeAuth, setSafeAuth] = useState<SafeAuthPack>();
+  const [userInfo, setUserInfo] = useState<any>();
+  const [provider, setProvider] = useState<Eip1193Provider | null>(null);
+  const [safeAuthSignInResponse, setSafeAuthSignInResponse] = useState<AuthKitSignInData | null>(null);
+
+  useEffect(() => {
+    const init = async () => {
+      try {
+        const safeAuthInitOptions: SafeAuthInitOptions = {
+          showWidgetButton: false,
+          chainConfig: {
+            blockExplorerUrl: "https://goerli.etherscan.io",
+            chainId: "0x5",
+            displayName: "Ethereum Goerli",
+            rpcTarget: "https://rpc.ankr.com/eth_goerli",
+            ticker: "ETH",
+            tickerName: "Ethereum",
+          },
+        };
+
+        const safeAuthPack = new SafeAuthPack();
+        await safeAuthPack.init(safeAuthInitOptions);
+
+        setSafeAuth(safeAuthPack);
+        if (safeAuthPack.isAuthenticated) {
+          const signInInfo = await safeAuthPack?.signIn();
+          setSafeAuthSignInResponse(signInInfo);
+          setProvider(safeAuthPack.getProvider() as Eip1193Provider);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    init();
+  }, []);
+
+  const login = async () => {
+    if (!safeAuth) {
+      uiConsole("safeAuth not initialized yet");
+      return;
+    }
+    const signInInfo = await safeAuth.signIn();
+    console.log("SIGN IN RESPONSE: ", signInInfo);
+
+    const userInfo = await safeAuth.getUserInfo();
+    console.log("USER INFO: ", userInfo);
+
+    setSafeAuthSignInResponse(signInInfo);
+    setUserInfo(userInfo || undefined);
+    setProvider(safeAuth.getProvider() as Eip1193Provider);
+  };
+
+  const logout = async () => {
+    if (!safeAuth) {
+      uiConsole("safeAuth not initialized yet");
+      return;
+    }
+    await safeAuth.signOut();
+    setProvider(null);
+    setSafeAuthSignInResponse(null);
+  };
+
+  const createSafe = async () => {
+    // Currently, createSafe is not supported by SafeAuthKit.
+    const provider = new BrowserProvider(safeAuth?.getProvider() as Eip1193Provider);
+    const signer = await provider.getSigner();
+    const ethAdapter = new EthersAdapter({
+      ethers,
+      signerOrProvider: signer,
+    } as any);
+
+
+
+    console.log(safeAuthSignInResponse);
+
+    const safeFactory = await SafeFactory.create({ ethAdapter });
+    const safe: Safe = await safeFactory.deploySafe({
+      safeAccountConfig: { 
+        threshold: 1, 
+        owners: [safeAuthSignInResponse?.eoa as string],
+        fallbackHandler:'0xf7d2AEC4bd5bAF8c032a2c9ee9D3a71c79Fe92E0'
+      },
+    });
+    console.log("SAFE Created!", await safe.getAddress());
+    uiConsole("SAFE Created!", await safe.getAddress());
+  };
+
+  const getChainId = async () => {
+    if (!provider) {
+      uiConsole("provider not initialized yet");
+      return;
+    }
+    const rpc = new RPC(provider);
+    const chainId = await rpc.getChainId();
+    uiConsole(chainId);
+  };
+
+  const getAccounts = async () => {
+    if (!provider) {
+      uiConsole("provider not initialized yet");
+      return;
+    }
+    const rpc = new RPC(provider);
+    const address = await rpc.getAccounts();
+    uiConsole("Address: ",address);
+  };
+
+  const getBalance = async () => {
+    if (!provider) {
+      uiConsole("provider not initialized yet");
+      return;
+    }
+    const rpc = new RPC(provider);
+    const balance = await rpc.getBalance();
+    uiConsole("Balance: ",balance);
+  };
+
+  const sendTransaction = async () => {
+    if (!provider) {
+      uiConsole("provider not initialized yet");
+      return;
+    }
+    const rpc = new RPC(provider);
+    const receipt = await rpc.sendTransaction();
+    uiConsole(receipt);
+  };
+
+  const signMessage = async () => {
+    if (!provider) {
+      uiConsole("provider not initialized yet");
+      return;
+    }
+    const rpc = new RPC(provider);
+    const signedMessage = await rpc.signMessage();
+    uiConsole(signedMessage);
+  };
+
+  const signAndExecuteSafeTx = async () => {
+    const safeAddress = safeAuthSignInResponse?.safes?.[0] || "0x";
+
+    // Wrap Web3Auth provider with ethers
+    const provider = new BrowserProvider(safeAuth?.getProvider() as Eip1193Provider);
+    const signer = await provider.getSigner();
+    const destinationAddress = '0xa5C44F8c2245B83C9f5a38adf20c1beA48743614'
+    const withdrawAmount = ethers.parseUnits('0', 'ether').toString()
+    const options: MetaTransactionOptions = {
+      isSponsored: true
+    }
+    // Create a transactions array with one transaction object
+    const transactions: MetaTransactionData[] = [{
+      to: destinationAddress,
+      data: '0x',
+      value: withdrawAmount
+    }]
+    const ethAdapter = new EthersAdapter({
+      ethers,
+      signerOrProvider: signer,
+    });
+    const protocolKit = await Safe.create({
+      safeAddress,
+      ethAdapter,
+    });
+    console.log(protocolKit)
+    const relayKit = new GelatoRelayPack({ apiKey: process.env.NEXT_PUBLIC_1BALANCE_API_KEY, protocolKit })
+    const safeTransaction = await relayKit.createRelayedTransaction({
+      transactions,
+      options
+    })
+    console.log('RELAY', relayKit);
+
+    console.log('SAFE TRANS', safeTransaction);
+    const signedSafeTransaction = await protocolKit.signTransaction(safeTransaction)
+    console.log('SIGNED', signedSafeTransaction);
+    const response = await relayKit.executeRelayTransaction(signedSafeTransaction, options)
+
+    console.log(`Relay Transaction Task ID: https://relay.gelato.digital/tasks/status/${response.taskId}`)
+  };
+
+  function uiConsole(...args: any[]): void{
+    const el = document.querySelector("#console>p");
+    if (el) {
+      const formattedString = args.map(arg => arg.toString()).join(' ');
+      el.textContent = formattedString;
+    }
+  }
+
+  const loggedInView = (
+    <>
+      <div className="flex-container">
+                   <>
+            <div>
+              <button onClick={createSafe} className="card">
+                Create Safe
+              </button>
+            </div>
+            <div>
+              <button onClick={logout} className="card">
+                Log Out
+              </button>
+            </div>
+          </>
+      
+          <>
+            <div>
+              <button onClick={getAccounts} className="card">
+                Get Accounts
+              </button>
+            </div>
+            <div>
+              <button onClick={getBalance} className="card">
+                Get Balance
+              </button>
+            </div>
+            <div>
+              <button onClick={signMessage} className="card">
+                Sign Message
+              </button>
+            </div>
+            <div>
+              <button onClick={sendTransaction} className="card">
+                Send Transaction
+              </button>
+            </div>
+            <div>
+              <button onClick={signAndExecuteSafeTx} className="card">
+                Sign & Ex Safe Txn
+              </button>
+            </div>
+            <div>
+              <button onClick={logout} className="card">
+                Log Out
+              </button>
+            </div>
+
+          </>
+      
+      </div>
+      <div id="console" style={{ whiteSpace: "pre-line" }}>
+        <p style={{ whiteSpace: "pre-line" }}></p>
+      </div>
+    </>
+  );
+
+  const unloggedInView = (
+    <button onClick={login} className="card">
+      Login
+    </button>
+  );
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Navbar />
-      {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className="container">
+      <div className="grid">{provider ? loggedInView : unloggedInView}</div>
+
+      <div className="grid">{provider ? userInfo?.name ? <p style={{fontSize:'30px'}}>Welcome {userInfo?.name}!</p> : null : null} </div>
+      <div className="grid">
+        {provider ? (
+          safeAuthSignInResponse?.eoa ? (
+            <p>
+              Your EOA:{" "}
+              <a href={`https://goerli.etherscan.io/address/${safeAuthSignInResponse?.eoa}`} target="_blank" rel="noreferrer" style={{color:'white'}}>
+                {safeAuthSignInResponse?.eoa}
+              </a>
+            </p>
+          ) : null
+        ) : null}{" "}
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="grid">
+        {provider ? (
+          safeAuthSignInResponse?.safes?.length ? (
+            <>
+              <p>Your Safe Accounts</p>
+              {safeAuthSignInResponse?.safes?.map((safe: any, index: any) => (
+                <p key={index}>
+                  Safe:{" "}
+                  <a href={`https://goerli.etherscan.io/address/${safe}`} target="_blank" rel="noreferrer" style={{color:'white'}}>
+                    {safe}
+                  </a>
+                </p>
+              ))}
+            </>
+          ) : (
+            <>
+              <p>No Available Safes, Please create one by clicking the above button. </p>
+              <p> Note: You should have some goerli ETH in your account.</p>
+              <p>Please be patient, it takes time to create the SAFE!, depending upon network congestion.</p>
+            </>
+          )
+        ) : null}
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div> */}
-    </main>
-  )
+    </div>
+  );
 }
+
+export default App;
