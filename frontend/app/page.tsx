@@ -4,7 +4,7 @@ import { SafeAuthPack, SafeAuthInitOptions, AuthKitSignInData } from "@safe-glob
 import Safe, { EthersAdapter, SafeFactory } from "@safe-global/protocol-kit";
 import { ethers, BrowserProvider, Eip1193Provider } from "ethers";
 import { GelatoRelayPack } from '@safe-global/relay-kit'
-// import "./app.css";
+import "./app.css";
 import RPC from "./web3RPC"; 
 import { MetaTransactionData, MetaTransactionOptions } from '@safe-global/safe-core-sdk-types'
 function App() {
