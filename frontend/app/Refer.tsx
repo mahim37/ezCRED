@@ -5,12 +5,13 @@ const ReferButton = () => {
     const [showPopup, setShowPopup] = useState(false);
     const [password, setPassword] = useState('');
     const [tokens, setTokens] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleTogglePopup = () => {
         setShowPopup((prevShowPopup) => !prevShowPopup);
     };
 
-    const handleRefer = () => {
+    const handleSend = () => {
         console.log('Referring with Password:', password, 'and Tokens:', tokens);
         setPassword('');
         setTokens('');
@@ -40,7 +41,8 @@ const ReferButton = () => {
                          <label>Email:</label>
                         <input
                             type="email"
-                            onChange={(e) => setPassword(e.target.value)}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="input-field"
                         />
 
@@ -52,11 +54,11 @@ const ReferButton = () => {
                             className="input-field"
                         />
 
-                        <button onClick={handleRefer} className="submit-button">
-                            Refer Now
+                        <button onClick={handleSend} className="submit-button">
+                            Send Gift
                         </button>
 
-                        <button onClick={handleClosePopup} className="close-button">
+                        <button onClick={handleClosePopup} className="refer-button">
                             Close
                         </button>
                     </div>
