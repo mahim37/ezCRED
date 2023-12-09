@@ -13,8 +13,6 @@ import {
   MenuList,
   Collapse,
 } from '@material-tailwind/react';
-// import sky from './assets/images/sky.svg';
-// import watercolor from './assets/images/watercolor.svg';
 
 const profileMenuItems = [
   {
