@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ReentrancyGuardLib",
+  "sourceName": "@1inch/token-plugins/contracts/libs/ReentrancyGuard.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ReentrantCall",
+      "type": "error"
+    }
+  ],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea2646970667358221220ba1188e1d769064f3657ed27448d1b677277bfcb3979e1d27bb743128ee11d9864736f6c63430008140033",
+  "deployedBytecode": "0x600080fdfea2646970667358221220ba1188e1d769064f3657ed27448d1b677277bfcb3979e1d27bb743128ee11d9864736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

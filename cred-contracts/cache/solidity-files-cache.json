@@ -1,0 +1,2131 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/CredPlugin.sol": {
+      "lastModificationDate": 1702145047611,
+      "contentHash": "432836106ac4734b6fccd8c58918f1aa",
+      "sourceName": "contracts/CredPlugin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/token-plugins/contracts/Plugin.sol",
+        "@1inch/token-plugins/contracts/interfaces/IERC20Plugins.sol",
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./USDC.sol",
+        "./WETH.sol",
+        "./libs/AYPCalc.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "CredPlugin"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/USDC.sol": {
+      "lastModificationDate": 1702145050868,
+      "contentHash": "2e33f1dbc57c4b498f155a843bf1c6bd",
+      "sourceName": "contracts/USDC.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "./interfaces/IUSDC.sol",
+        "@1inch/token-plugins/contracts/ERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "USDC"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/WETH.sol": {
+      "lastModificationDate": 1702145055401,
+      "contentHash": "b11a7f63a44f97bbac938fe123367689",
+      "sourceName": "contracts/WETH.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "./interfaces/IWETH.sol",
+        "@1inch/token-plugins/contracts/ERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "WETH"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/libs/AYPCalc.sol": {
+      "lastModificationDate": 1702145071981,
+      "contentHash": "36ca38e04716fc414f1e550ba32a956c",
+      "sourceName": "contracts/libs/AYPCalc.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./Mathlib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AYPCalc"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/Plugin.sol": {
+      "lastModificationDate": 1702174002162,
+      "contentHash": "cf7cf6a0d66008f02fbc6a4de6f4e28d",
+      "sourceName": "@1inch/token-plugins/contracts/Plugin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IPlugin.sol",
+        "./interfaces/IERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Plugin"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/interfaces/IERC20Plugins.sol": {
+      "lastModificationDate": 1702174002939,
+      "contentHash": "3bc13c7c39c34b4438a2453b69998c7e",
+      "sourceName": "@1inch/token-plugins/contracts/interfaces/IERC20Plugins.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Plugins"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1702174003056,
+      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1702174003049,
+      "contentHash": "df36f7051335cd1e748b1b6463b7fdd3",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/interfaces/IUSDC.sol": {
+      "lastModificationDate": 1702145063244,
+      "contentHash": "6562acb7f7a98b4a5bc0b2383109030c",
+      "sourceName": "contracts/interfaces/IUSDC.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IUSDC"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/ERC20Plugins.sol": {
+      "lastModificationDate": 1702174002162,
+      "contentHash": "a7cf037caa89b732b814aa94d8d37075",
+      "sourceName": "@1inch/token-plugins/contracts/ERC20Plugins.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/AddressSet.sol",
+        "./interfaces/IERC20Plugins.sol",
+        "./interfaces/IPlugin.sol",
+        "./libs/ReentrancyGuard.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Plugins"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1702174003049,
+      "contentHash": "3ae5166c6827a9cf1a7a462d1632b464",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/SafeERC20.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "f0b619588d02c2bc8c0526f12364683f",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+        "../interfaces/IDaiLikePermit.sol",
+        "../interfaces/IPermit2.sol",
+        "../interfaces/IWETH.sol",
+        "../libraries/RevertReasonForwarder.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1702174002309,
+      "contentHash": "211ffd288c1588ba8c10eae668ca3c66",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1702174003406,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/interfaces/IPlugin.sol": {
+      "lastModificationDate": 1702174002939,
+      "contentHash": "c4b251ead4e1924d7b21777b969acf2f",
+      "sourceName": "@1inch/token-plugins/contracts/interfaces/IPlugin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPlugin"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/AddressSet.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "a38734ff06779afe02016919c34046f2",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/AddressSet.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AddressArray.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressSet"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/libs/ReentrancyGuard.sol": {
+      "lastModificationDate": 1702174002939,
+      "contentHash": "6b731fd1360d9c62c6a7d95092a1b3c6",
+      "sourceName": "@1inch/token-plugins/contracts/libs/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuardExt",
+        "ReentrancyGuardLib"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1702174002309,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/AddressArray.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "505df517c31df47ae9e6b40dfbb7d9ed",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/AddressArray.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressArray"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "b2bfeb2a722fd27fd12cff2206b28353",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "005165fbdd2ede26a42fcd5c3f3557e1",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RevertReasonForwarder"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/interfaces/IPermit2.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "0268ecff8b04ed0774c78bb9f798092a",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IPermit2.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPermit2"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/interfaces/IDaiLikePermit.sol": {
+      "lastModificationDate": 1702174003089,
+      "contentHash": "0b6b2bcb1d551c39449e883583743e9f",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IDaiLikePermit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IDaiLikePermit"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+      "lastModificationDate": 1702174003406,
+      "contentHash": "fb7fa5ae1762ad9a1dd91a8bbd510cb1",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20Permit.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+      "lastModificationDate": 1702174003406,
+      "contentHash": "aa849939a4ae83a4dcb2dca9b3e9e707",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1702145059751,
+      "contentHash": "a168626a2966adff39e46badff870c2f",
+      "sourceName": "contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/Projects/ezCRED/cred-contracts/contracts/libs/Mathlib.sol": {
+      "lastModificationDate": 1702145067074,
+      "contentHash": "bf4bfeebff03fbe2a1763df536763e2e",
+      "sourceName": "contracts/libs/Mathlib.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Mathlib"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/CredPlugin.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "432836106ac4734b6fccd8c58918f1aa",
+      "sourceName": "contracts/CredPlugin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@1inch/token-plugins/contracts/Plugin.sol",
+        "@1inch/token-plugins/contracts/interfaces/IERC20Plugins.sol",
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./USDC.sol",
+        "./WETH.sol",
+        "./libs/AYPCalc.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "CredPlugin"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/USDC.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "2e33f1dbc57c4b498f155a843bf1c6bd",
+      "sourceName": "contracts/USDC.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "./interfaces/IUSDC.sol",
+        "@1inch/token-plugins/contracts/ERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "USDC"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/WETH.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "b11a7f63a44f97bbac938fe123367689",
+      "sourceName": "contracts/WETH.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+        "./interfaces/IWETH.sol",
+        "@1inch/token-plugins/contracts/ERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "WETH"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/libs/AYPCalc.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "36ca38e04716fc414f1e550ba32a956c",
+      "sourceName": "contracts/libs/AYPCalc.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "./Mathlib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AYPCalc"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1702176414007,
+      "contentHash": "df36f7051335cd1e748b1b6463b7fdd3",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/interfaces/IERC20Plugins.sol": {
+      "lastModificationDate": 1702176413663,
+      "contentHash": "3bc13c7c39c34b4438a2453b69998c7e",
+      "sourceName": "@1inch/token-plugins/contracts/interfaces/IERC20Plugins.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Plugins"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/Plugin.sol": {
+      "lastModificationDate": 1702176413663,
+      "contentHash": "cf7cf6a0d66008f02fbc6a4de6f4e28d",
+      "sourceName": "@1inch/token-plugins/contracts/Plugin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IPlugin.sol",
+        "./interfaces/IERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Plugin"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1702176414013,
+      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/interfaces/IUSDC.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "6562acb7f7a98b4a5bc0b2383109030c",
+      "sourceName": "contracts/interfaces/IUSDC.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IUSDC"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/SafeERC20.sol": {
+      "lastModificationDate": 1702176413947,
+      "contentHash": "f0b619588d02c2bc8c0526f12364683f",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+        "../interfaces/IDaiLikePermit.sol",
+        "../interfaces/IPermit2.sol",
+        "../interfaces/IWETH.sol",
+        "../libraries/RevertReasonForwarder.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1702176414007,
+      "contentHash": "3ae5166c6827a9cf1a7a462d1632b464",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/ERC20Plugins.sol": {
+      "lastModificationDate": 1702176413663,
+      "contentHash": "a7cf037caa89b732b814aa94d8d37075",
+      "sourceName": "@1inch/token-plugins/contracts/ERC20Plugins.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@1inch/solidity-utils/contracts/libraries/AddressSet.sol",
+        "./interfaces/IERC20Plugins.sol",
+        "./interfaces/IPlugin.sol",
+        "./libs/ReentrancyGuard.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC20Plugins"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1702176414010,
+      "contentHash": "211ffd288c1588ba8c10eae668ca3c66",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.1"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1702176414007,
+      "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/interfaces/IPermit2.sol": {
+      "lastModificationDate": 1702176413943,
+      "contentHash": "0268ecff8b04ed0774c78bb9f798092a",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IPermit2.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPermit2"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol": {
+      "lastModificationDate": 1702176413947,
+      "contentHash": "005165fbdd2ede26a42fcd5c3f3557e1",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/RevertReasonForwarder.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "RevertReasonForwarder"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/interfaces/IDaiLikePermit.sol": {
+      "lastModificationDate": 1702176413943,
+      "contentHash": "0b6b2bcb1d551c39449e883583743e9f",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IDaiLikePermit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IDaiLikePermit"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1702176413943,
+      "contentHash": "b2bfeb2a722fd27fd12cff2206b28353",
+      "sourceName": "@1inch/solidity-utils/contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol": {
+      "lastModificationDate": 1702176414007,
+      "contentHash": "fb7fa5ae1762ad9a1dd91a8bbd510cb1",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/draft-IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20Permit.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol": {
+      "lastModificationDate": 1702176414007,
+      "contentHash": "aa849939a4ae83a4dcb2dca9b3e9e707",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1702176414013,
+      "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/AddressSet.sol": {
+      "lastModificationDate": 1702176413947,
+      "contentHash": "a38734ff06779afe02016919c34046f2",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/AddressSet.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AddressArray.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressSet"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/interfaces/IPlugin.sol": {
+      "lastModificationDate": 1702176413663,
+      "contentHash": "c4b251ead4e1924d7b21777b969acf2f",
+      "sourceName": "@1inch/token-plugins/contracts/interfaces/IPlugin.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20Plugins.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPlugin"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/token-plugins/contracts/libs/ReentrancyGuard.sol": {
+      "lastModificationDate": 1702176413663,
+      "contentHash": "6b731fd1360d9c62c6a7d95092a1b3c6",
+      "sourceName": "@1inch/token-plugins/contracts/libs/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuardExt",
+        "ReentrancyGuardLib"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/node_modules/@1inch/solidity-utils/contracts/libraries/AddressArray.sol": {
+      "lastModificationDate": 1702176413943,
+      "contentHash": "505df517c31df47ae9e6b40dfbb7d9ed",
+      "sourceName": "@1inch/solidity-utils/contracts/libraries/AddressArray.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressArray"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "a168626a2966adff39e46badff870c2f",
+      "sourceName": "contracts/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/home/Light/Documents/ETHIndia/ezCRED/cred-contracts/contracts/libs/Mathlib.sol": {
+      "lastModificationDate": 1702176414933,
+      "contentHash": "bf4bfeebff03fbe2a1763df536763e2e",
+      "sourceName": "contracts/libs/Mathlib.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/math/Math.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Mathlib"
+      ]
+    }
+  }
+}

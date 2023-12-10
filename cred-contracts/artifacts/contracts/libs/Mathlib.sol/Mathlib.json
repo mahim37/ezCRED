@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Mathlib",
+  "sourceName": "contracts/libs/Mathlib.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea2646970667358221220c281cd117ff4b8e75edbb240182e44d25a04d764b1c84b6d44448eb156e4f8b564736f6c63430008140033",
+  "deployedBytecode": "0x600080fdfea2646970667358221220c281cd117ff4b8e75edbb240182e44d25a04d764b1c84b6d44448eb156e4f8b564736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
